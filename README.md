@@ -2,13 +2,13 @@
 
 Une application Flask permettant aux étudiants de gérer leurs notes, de calculer leurs moyennes et de suivre leur progression scolaire.
 
-## 🚀 Fonctionnalités
+## Fonctionnalités
 - Ajout, modification et suppression de notes.
 - Attribution de coefficients et de modules.
 - Calcul automatique de la moyenne par branche.
 - Interface moderne avec **Tailwind CSS** et **daisyUI**.
 
-## 👥 User Stories (Histoires Utilisateurs)
+## User Stories
 
 | ID | En tant que... | Je veux pouvoir... | Afin de... |
 | :--- | :--- | :--- | :--- |
