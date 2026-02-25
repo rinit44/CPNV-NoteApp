@@ -1,4 +1,4 @@
-# 📓 NoteApp - CPNV
+# NoteApp - CPNV
 
 Une application Flask permettant aux étudiants de gérer leurs notes, de calculer leurs moyennes et de suivre leur progression scolaire.
 
