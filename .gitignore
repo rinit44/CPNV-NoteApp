@@ -9,7 +9,7 @@ venv/
 env/
 ENV/
 
-# --- Flask ---
+
 instance/
 .webassets-cache
 

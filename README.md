@@ -15,4 +15,4 @@ Une application Flask permettant aux étudiants de gérer leurs notes, de calcul
 | **US1** | Étudiant | Ajouter une note avec un coefficient | Suivre mes résultats d'examens. |
 | **US2** | Étudiant | Voir la liste de mes notes par module | Savoir où j'en suis dans chaque branche. |
 | **US3** | Étudiant | Calculer ma moyenne générale | Anticiper mon bulletin de fin d'année. |
-| **US4** | Étudiant | Modifier une note saisie par erreur | Garder mes données à jour et précises. |git
+| **US4** | Étudiant | Modifier une note saisie par erreur | Garder mes données à jour et précises. |

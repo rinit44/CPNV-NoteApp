@@ -1,0 +1,52 @@
+<!-- Name : login.html -->
+<!-- Author : Rinit Krasniqi -->
+<!-- Date : 25.02.2026 -->
+
+
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - NoteApp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+</head>
+
+<body class="bg-[#6b6b6b] min-h-screen flex flex-col font-sans">
+
+    <!-- Centered content -->
+    <div class="flex-1 flex items-center justify-center">
+
+        <!-- DaisyUI Card -->
+        <div class="card w-80 bg-[#686868] shadow-2xl border border-white/10">
+            <div class="card-body items-center p-10 gap-0">
+
+                <h1 class="text-3xl font-bold text-white mb-10">NoteApp</h1>
+
+                <form action="/" method="POST" class="w-full flex flex-col gap-4">
+
+                    <input type="text"
+                           name="username"
+                           placeholder="Username"
+                           class="input w-full bg-gray-300 text-gray-800 placeholder-gray-500 font-semibold text-center border-none focus:outline-none focus:bg-white"
+                           required />
+
+                    <input type="password"
+                           name="password"
+                           placeholder="Password"
+                           class="input w-full bg-gray-300 text-gray-800 placeholder-gray-500 font-semibold text-center border-none focus:outline-none focus:bg-white"
+                           required />
+
+                    <button type="submit" class="btn btn-primary w-full mt-4 font-bold">
+                        Sign In
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
