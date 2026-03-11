@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPNV-NoteApp - Dashboard</title>
+    <!-- Tailwind CSS + DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-base-200">
+    <!-- Navbar -->
+    <div class="navbar bg-primary text-primary-content shadow-lg">
+        <div class="flex-1">
+            <a class="btn btn-ghost text-xl font-bold">CPNV-NoteApp</a>
+        </div>
+        <div class="flex-none">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar placeholder">
+                    <div class="bg-primary-content text-primary rounded-full w-10">
+                        <span class="text-lg font-bold">[N]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-7xl">
+        
+        <!-- Welcome Card -->
+        <div class="card bg-gradient-to-br from-primary to-secondary text-primary-content shadow-xl mb-8">
+            <div class="card-body text-center">
+                <h2 class="card-title text-3xl font-bold justify-center">Bienvenue à nouveau, [Nom]</h2>
+                <p class="text-lg opacity-90">Moyenne generale NOTE / Moyenne ICT NOTE</p>
+            </div>
+        </div>
+
+        <!-- Trimestre 1 -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="badge badge-primary badge-lg mr-3"></div>
+                <h3 class="text-2xl font-bold text-base-content">Trimestre 1</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="MA-15">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">MA-15</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="MA-100">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">MA-100</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="INI-45">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">INI-45</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="INI-06">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">INI-06</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="INI-03">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">INI-03</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="INI-02">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">INI-02</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="INI-01">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">INI-01</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trimestre 2 -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="badge badge-primary badge-lg mr-3"></div>
+                <h3 class="text-2xl font-bold text-base-content">Trimestre 2</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="MA-09">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">MA-09</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="MA-24">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">MA-24</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="IEL2">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">IEL2</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I187">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I187</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I319">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I319</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I293">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I293</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I162">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I162</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trimestre 3 -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="badge badge-primary badge-lg mr-3"></div>
+                <h3 class="text-2xl font-bold text-base-content">Trimestre 3</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="MA-20">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">MA-20</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="MA-302">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">MA-302</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="IEL3">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">IEL3</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I431">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I431</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I164">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I164</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I122">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I122</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I117">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I117</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trimestre 4 -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="badge badge-primary badge-lg mr-3"></div>
+                <h3 class="text-2xl font-bold text-base-content">Trimestre 4</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="MA-22">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">MA-22</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="IEL4">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">IEL4</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I216">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I216</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I306">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I306</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I231">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I231</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="I123">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">I123</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Branche Generale -->
+        <div class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="badge badge-primary badge-lg mr-3"></div>
+                <h3 class="text-2xl font-bold text-base-content">Branche generale</h3>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="Mathématiques">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">Mathématiques</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="Anglais">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">Anglais</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="Culture Generale">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">Culture Generale</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="Allemand">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">Allemand</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+                <div class="card bg-primary text-primary-content shadow-lg hover:shadow-2xl transition-all hover:-translate-y-1 cursor-pointer" data-course="Histoire">
+                    <div class="card-body items-center text-center p-6">
+                        <h2 class="card-title text-lg">Histoire</h2>
+                        <p class="text-sm opacity-90">Note</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Make all course cards clickable
+        document.querySelectorAll('[data-course]').forEach(card => {
+            card.addEventListener('click', function() {
+                const courseCode = this.getAttribute('data-course');
+                window.location.href = `grades.html?course=${encodeURIComponent(courseCode)}`;
+            });
+        });
+    </script>
+</body>
+</html>
