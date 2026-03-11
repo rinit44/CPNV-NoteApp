@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes - CPNV-NoteApp</title>
+    <!-- Tailwind CSS + DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-base-200">
+    <!-- Navbar -->
+    <div class="navbar bg-primary text-primary-content shadow-lg">
+        <div class="flex-1">
+            <a href="dashboard.html" class="btn btn-ghost text-xl font-bold">CPNV-NoteApp</a>
+        </div>
+        <div class="flex-none">
+            <div class="dropdown dropdown-end">
+                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar placeholder">
+                    <div class="bg-primary-content text-primary rounded-full w-10">
+                        <span class="text-lg font-bold">[N]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        
+        <!-- Back Button -->
+        <a href="dashboard.html" class="btn btn-ghost mb-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Retour au tableau de bord
+        </a>
+
+        <!-- Course Header Card -->
+        <div class="card bg-gradient-to-br from-primary to-secondary text-primary-content shadow-xl mb-8">
+            <div class="card-body">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="text-center md:text-left">
+                        <h2 class="card-title text-4xl font-bold mb-2" id="courseCode">Chargement...</h2>
+                        <p class="text-xl opacity-90" id="courseName">Chargement...</p>
+                    </div>
+                    <div class="stats stats-vertical lg:stats-horizontal shadow bg-base-100 text-base-content">
+                        <div class="stat place-items-center">
+                            <div class="stat-title">Note Générale</div>
+                            <div class="stat-value text-primary" id="overallGrade">-</div>
+                            <div class="stat-desc">
+                                <div id="gradeStatus" class="badge badge-lg">-</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div class="stat bg-base-100 shadow-lg rounded-lg">
+                <div class="stat-title">Moyenne</div>
+                <div class="stat-value text-primary text-3xl" id="avgGrade">-</div>
+            </div>
+            <div class="stat bg-base-100 shadow-lg rounded-lg">
+                <div class="stat-title">Meilleure Note</div>
+                <div class="stat-value text-success text-3xl" id="bestGrade">-</div>
+            </div>
+            <div class="stat bg-base-100 shadow-lg rounded-lg">
+                <div class="stat-title">Plus Basse</div>
+                <div class="stat-value text-warning text-3xl" id="worstGrade">-</div>
+            </div>
+            <div class="stat bg-base-100 shadow-lg rounded-lg">
+                <div class="stat-title">Évaluations</div>
+                <div class="stat-value text-accent text-3xl" id="evalCount">-</div>
+            </div>
+        </div>
+
+        <!-- Grades Section -->
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
+                    <h3 class="card-title text-2xl">Toutes les notes</h3>
+                    <button class="btn btn-success btn-sm sm:btn-md" onclick="showAddGradeModal()">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                        Ajouter une note
+                    </button>
+                </div>
+
+                <!-- Grades Table -->
+                <div class="overflow-x-auto">
+                    <table class="table table-zebra">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Évaluation</th>
+                                <th>Type</th>
+                                <th>Coefficient</th>
+                                <th>Note</th>
+                                <th>Max</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gradesTableBody">
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Add Grade Modal -->
+    <dialog id="addGradeModal" class="modal">
+        <div class="modal-box w-11/12 max-w-3xl">
+            <h3 class="font-bold text-2xl mb-4">Nouvelle évaluation</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Date</span>
+                    </label>
+                    <input type="date" id="newDate" class="input input-bordered" />
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Nom de l'évaluation</span>
+                    </label>
+                    <input type="text" id="newAssignment" placeholder="Ex: Examen Final" class="input input-bordered" />
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Type</span>
+                    </label>
+                    <select id="newType" class="select select-bordered">
+                        <option value="exam">Examen</option>
+                        <option value="test">Test</option>
+                        <option value="homework">Devoir</option>
+                        <option value="quiz">Quiz</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Coefficient (%)</span>
+                    </label>
+                    <input type="number" id="newWeight" placeholder="25" min="0" max="100" class="input input-bordered" />
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Note obtenue</span>
+                    </label>
+                    <input type="number" id="newGrade" placeholder="5.5" min="0" max="6" step="0.1" class="input input-bordered" />
+                </div>
+                <div class="form-control">
+                    <label class="label">
+                        <span class="label-text font-semibold">Note maximale</span>
+                    </label>
+                    <input type="number" id="newMax" value="6.0" min="0" step="0.1" class="input input-bordered" />
+                </div>
+            </div>
+            <div class="modal-action">
+                <button class="btn" onclick="hideAddGradeModal()">Annuler</button>
+                <button class="btn btn-primary" onclick="saveNewGrade()">Enregistrer</button>
+            </div>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
+
+    <script src="grades-data.js"></script>
+    <script src="grades-daisy.js"></script>
+</body>
+</html>
