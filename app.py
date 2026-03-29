@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import mysql.connector
 from mysql.connector import IntegrityError
 import os
@@ -8,6 +9,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 app = Flask(__name__)
+CORS(app)
+
 
 
 # ===========================================================
@@ -53,12 +56,12 @@ def _execute(query, params=(), fetch=None, commit=False):
 
 @app.route("/users", methods=["GET"])
 def get_all_users():
-    users = _execute("SELECT ID, Name, Fisrtname, Email, Role FROM Users", fetch="all")
+    users = _execute("SELECT ID, Name, firstname, Email, Role FROM Users", fetch="all")
     return jsonify(users), 200
 
 @app.route("/users/<int:id>", methods=["GET"])
 def get_user_by_id(id):
-    user = _execute("SELECT ID, Name, Fisrtname, Email, Role FROM Users WHERE ID = %s", (id,), fetch="one")
+    user = _execute("SELECT ID, Name, firstname, Email, Role FROM Users WHERE ID = %s", (id,), fetch="one")
     if not user:
         return jsonify({"erreur": "Utilisateur non trouvé"}), 404
     return jsonify(user), 200
@@ -68,7 +71,7 @@ def create_user():
     data = request.get_json()
     try:
         last_id, _ = _execute(
-            "INSERT INTO Users (Name, Fisrtname, Email, Password, Role) VALUES (%s, %s, %s, %s, %s)",
+            "INSERT INTO Users (Name, firstname, Email, Password, Role) VALUES (%s, %s, %s, %s, %s)",
             (data["name"], data["firstname"], data["email"], data["password"], data["role"]),
             commit=True
         )
@@ -80,7 +83,7 @@ def create_user():
 def update_user(id):
     data = request.get_json()
     _, rowcount = _execute(
-        "UPDATE Users SET Name=%s, Fisrtname=%s, Email=%s, Role=%s WHERE ID=%s",
+        "UPDATE Users SET Name=%s, firstname=%s, Email=%s, Role=%s WHERE ID=%s",
         (data["name"], data["firstname"], data["email"], data["role"], id),
         commit=True
     )
@@ -134,7 +137,7 @@ def delete_classroom(id):
 @app.route("/classrooms/<int:id>/users", methods=["GET"])
 def get_users_of_classroom(id):
     users = _execute("""
-        SELECT u.ID, u.Name, u.Fisrtname, u.Email, u.Role
+        SELECT u.ID, u.Name, u.firstname, u.Email, u.Role
         FROM Users_Classrooms uc
         JOIN Users u ON uc.Users_ID = u.ID
         WHERE uc.Classrooms_ID = %s
@@ -211,7 +214,10 @@ def create_note():
 
 @app.route("/notes/<int:id>", methods=["DELETE"])
 def delete_note(id):
+    _execute("DELETE FROM Users_Notes WHERE Notes_ID = %s", (id,), commit=True)
+    
     _, rowcount = _execute("DELETE FROM Notes WHERE ID = %s", (id,), commit=True)
+    
     if not rowcount:
         return jsonify({"erreur": "Note non trouvée"}), 404
     return jsonify({"message": "Note supprimée"}), 200
